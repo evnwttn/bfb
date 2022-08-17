@@ -17,6 +17,6 @@ body {
   text-transform: uppercase;
   color: #ACD90B;
   font-size: 10vw;
-  transform: skew(15deg);
+  transform: skew(-15deg);
   cursor:pointer;
 }
