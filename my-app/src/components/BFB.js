@@ -1,7 +1,13 @@
+import "../style.css";
+
 export const BFB = () => {
   function sayHello() {
     alert("You clicked me!");
   }
 
-  return <button onClick={sayHello}>Default</button>;
+  return (
+    <button id="bfb" onClick={sayHello}>
+      BFB
+    </button>
+  );
 };

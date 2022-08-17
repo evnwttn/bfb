@@ -1,8 +1,22 @@
 body {
-  background-image: linear-gradient(#DF8B60
-  , #BC859C);
+  background-image: linear-gradient(#070D0B, #0D0D0D);
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+#bfb {
+  position: absolute;
+  top: 10vw;
+  left: 25vw;
+  background: none;
+  width:50vw;
+  height:25vw;
+  border: 1vw solid #ACD90B;
+  font-family: 'Saira', sans-serif;
+  text-transform: uppercase;
+  color: #ACD90B;
+  font-size: 10vw;
+  transform: skew(15deg);
 }
