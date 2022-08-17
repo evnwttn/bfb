@@ -4,8 +4,6 @@ export const BFB = () => {
   }
 
   return (
-    <>
       <button onClick={sayHello}>Default</button>;
-    </>
   );
 };
