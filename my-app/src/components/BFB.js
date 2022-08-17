@@ -3,7 +3,5 @@ export const BFB = () => {
     alert("You clicked me!");
   }
 
-  return (
-      <button onClick={sayHello}>Default</button>;
-  );
+  return <button onClick={sayHello}>Default</button>;
 };
