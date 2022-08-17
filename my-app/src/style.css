@@ -14,9 +14,9 @@ body {
   width:50vw;
   height:25vw;
   border: 1vw solid #ACD90B;
-  font-family: 'Saira', sans-serif;
   text-transform: uppercase;
   color: #ACD90B;
   font-size: 10vw;
   transform: skew(15deg);
+  cursor:pointer;
 }
