@@ -2,48 +2,46 @@ import "../style.css";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const { register, handleSubmit, setValue } = useForm({
-  defaultValues: {
-    id: "Butt Sesh",
-    author: "Button",
-    tracks: [
-      { title: "Track 1" },
-      { title: "Track 2" },
-      { title: "Track 3" },
-      { title: "Track 4" },
-      { title: "Track 5" },
-    ],
-    parameters: [
-      "title",
-      "Vocals",
-      "Percussion",
-      "Rhythm Guitar",
-      "Lead Guitar",
-      "Drums",
-      "Piano",
-      "FX",
-      "Mix",
-      "Master",
-    ],
-  },
-});
-
-const [sessionData, setSessionData] = useState();
-const onSubmit = (data) => setSessionData(data);
-
-const useEffect =
-  (() => {
-    console.log(sessionData);
-  },
-  [sessionData]);
-
 export const BFB = () => {
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      id: "Butt Sesh",
+      author: "Button",
+      tracks: [
+        { title: "Track 1" },
+        { title: "Track 2" },
+        { title: "Track 3" },
+        { title: "Track 4" },
+        { title: "Track 5" },
+      ],
+      parameters: [
+        "title",
+        "Vocals",
+        "Percussion",
+        "Rhythm Guitar",
+        "Lead Guitar",
+        "Drums",
+        "Piano",
+        "FX",
+        "Mix",
+        "Master",
+      ],
+    },
+  });
+
+  const [sessionData, setSessionData] = useState();
+  const onSubmit = (data) => setSessionData(data);
+
+  useEffect(() => {
+    console.log(sessionData);
+  }, [sessionData]);
+
   function pushDeButton() {
-    console.log(session);
+    handleSubmit(onSubmit);
   }
 
   return (
-    <button id="bfb" onClick={handleSubmit(onSubmit)}>
+    <button id="bfb" onClick={pushDeButton}>
       BFB
     </button>
   );
