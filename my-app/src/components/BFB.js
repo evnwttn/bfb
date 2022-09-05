@@ -1,6 +1,15 @@
 import "../style.css";
 
 const session = {
+  id: "Butt Sesh",
+  author: "Button",
+  tracks: [
+    { title: "Track 1" },
+    { title: "Track 2" },
+    { title: "Track 3" },
+    { title: "Track 4" },
+    { title: "Track 5" },
+  ],
   parameters: [
     "title",
     "Vocals",
@@ -13,15 +22,28 @@ const session = {
     "Mix",
     "Master",
   ],
-  author: "Button",
-  id: "Butt Sesh",
+};
+
+const targetFormat = {
+  id: "title",
+  author: "author",
   tracks: [
-    { title: "Track 1" },
-    { title: "Track 2" },
-    { title: "Track 3" },
-    { title: "Track 4" },
-    { title: "Track 5" },
+    {
+      title: "song 1",
+      parameters: [
+        { parameter: "para1", colour: "transparent", comment: "" },
+        { parameter: "para2", colour: "transparent", comment: "" },
+      ],
+    },
+    {
+      title: "song 2",
+      parameters: [
+        { parameter: "para1", colour: "transparent", comment: "" },
+        { parameter: "para2", colour: "transparent", comment: "" },
+      ],
+    },
   ],
+  parameters: ["title", "para1", "para2"],
 };
 
 export const BFB = () => {
