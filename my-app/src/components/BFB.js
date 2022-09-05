@@ -31,29 +31,24 @@ export const BFB = () => {
     },
   });
 
-  const method2 = useCallback(() => {
-    sessionData &&
-      sessionData.tracks.forEach((track, index) => {
-        setValue(`tracks.${index}.parameters.parameter`, `poop`);
-      });
-  }, [sessionData, setValue]);
-
   const method = useCallback(() => {
     sessionData &&
       sessionData.tracks.forEach((track, trackIndex) => {
         sessionData.parameters.forEach((parameterName, parameterIndex) => {
-          setValue(
-            `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
-            parameterName
-          );
-          setValue(
-            `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
-            "default"
-          );
-          setValue(
-            `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
-            "default"
-          );
+          if (parameterName !== "title") {
+            setValue(
+              `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
+              parameterName
+            );
+            setValue(
+              `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
+              "default"
+            );
+            setValue(
+              `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
+              "default"
+            );
+          }
         });
       });
   }, [sessionData, setValue]);
