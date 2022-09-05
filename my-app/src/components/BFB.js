@@ -31,17 +31,14 @@ export const BFB = () => {
     },
   });
 
-  const method2 = useCallback(() => {
-    sessionData &&
-      sessionData.parameters.forEach((object, index) =>
-        setValue(`tracks.${index}.parameters.parameter`, object)
-      );
-  }, [sessionData, setValue]);
-
   const method = useCallback(() => {
     sessionData &&
       sessionData.tracks.forEach((track, index) => {
-        setValue(`tracks.${index}.parameters`, "hello");
+        setValue(`tracks.${index}.parameters`, `default`);
+      });
+    sessionData &&
+      sessionData.parameters.forEach((parameter, index) => {
+        console.log(parameter);
       });
   }, [sessionData, setValue]);
 
