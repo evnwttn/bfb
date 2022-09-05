@@ -43,7 +43,7 @@ export const BFB = () => {
       sessionData.tracks.forEach((track, trackIndex) => {
         sessionData.parameters.forEach((parameterName, parameterIndex) => {
           setValue(
-            `tracks[${trackIndex}].parameters.parameter[${parameterIndex}]`,
+            `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
             parameterName
           );
         });
