@@ -34,11 +34,12 @@ export const BFB = () => {
   const method = useCallback(() => {
     sessionData &&
       sessionData.tracks.forEach((track, index) => {
-        setValue(`tracks.${index}.parameters`, `default`);
-      });
-    sessionData &&
-      sessionData.parameters.forEach((parameter, index) => {
-        console.log(parameter);
+        setValue(
+          `tracks.${index}.parameters`,
+          `${sessionData.parameters.map((title, index) => {
+            return title;
+          })}`
+        );
       });
   }, [sessionData, setValue]);
 
