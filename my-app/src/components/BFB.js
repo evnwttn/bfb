@@ -1,35 +1,34 @@
 import "../style.css";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+
+const [sessionData, setSessionData] = useState();
 
 const { register, handleSubmit, setValue } = useForm({
   defaultValues: {
-    parameters: ["title"],
+    id: "Butt Sesh",
+    author: "Button",
+    tracks: [
+      { title: "Track 1" },
+      { title: "Track 2" },
+      { title: "Track 3" },
+      { title: "Track 4" },
+      { title: "Track 5" },
+    ],
+    parameters: [
+      "title",
+      "Vocals",
+      "Percussion",
+      "Rhythm Guitar",
+      "Lead Guitar",
+      "Drums",
+      "Piano",
+      "FX",
+      "Mix",
+      "Master",
+    ],
   },
 });
-
-const session = {
-  id: "Butt Sesh",
-  author: "Button",
-  tracks: [
-    { title: "Track 1" },
-    { title: "Track 2" },
-    { title: "Track 3" },
-    { title: "Track 4" },
-    { title: "Track 5" },
-  ],
-  parameters: [
-    "title",
-    "Vocals",
-    "Percussion",
-    "Rhythm Guitar",
-    "Lead Guitar",
-    "Drums",
-    "Piano",
-    "FX",
-    "Mix",
-    "Master",
-  ],
-};
 
 const targetFormat = {
   id: "title",
