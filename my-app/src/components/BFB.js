@@ -1,11 +1,11 @@
 import "../style.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 
 export const BFB = () => {
   const [sessionData, setSessionData] = useState();
   const onSubmit = (data) => setSessionData(data);
-  const { register, handleSubmit, setValue } = useForm({
+  const { handleSubmit } = useForm({
     defaultValues: {
       id: "Butt Sesh",
       author: "Button",
@@ -31,9 +31,16 @@ export const BFB = () => {
     },
   });
 
-  useEffect(() => {
-    console.log(sessionData);
+  const method = useCallback(() => {
+    sessionData &&
+      sessionData.parameters.map((object, index) => {
+        return console.log(`${object}, ${index}`);
+      });
   }, [sessionData]);
+
+  useEffect(() => {
+    method();
+  }, [sessionData, method]);
 
   return (
     <button id="bfb" onClick={handleSubmit(onSubmit)}>
