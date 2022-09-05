@@ -46,6 +46,14 @@ export const BFB = () => {
             `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
             parameterName
           );
+          setValue(
+            `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
+            "default"
+          );
+          setValue(
+            `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
+            "default"
+          );
         });
       });
   }, [sessionData, setValue]);
