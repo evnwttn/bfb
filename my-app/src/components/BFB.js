@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 export const BFB = () => {
   const [sessionData, setSessionData] = useState();
   const onSubmit = (data) => setSessionData(data);
-  const { handleSubmit } = useForm({
+  const { handleSubmit, setValue } = useForm({
     defaultValues: {
       id: "Butt Sesh",
       author: "Button",
@@ -31,13 +31,23 @@ export const BFB = () => {
     },
   });
 
+  const method2 = useCallback(() => {
+    sessionData &&
+      sessionData.parameters.forEach((object, index) =>
+        setValue(`tracks.${index}.parameters.parameter`, object)
+      );
+  }, [sessionData, setValue]);
+
   const method = useCallback(() => {
     sessionData &&
-      sessionData.parameters.forEach((object) => console.log(object));
-  }, [sessionData]);
+      sessionData.tracks.forEach((track, index) => {
+        setValue(`tracks.${index}.parameters`, "hello");
+      });
+  }, [sessionData, setValue]);
 
   useEffect(() => {
     method();
+    console.log(sessionData);
   }, [sessionData, method]);
 
   return (
