@@ -33,9 +33,7 @@ export const BFB = () => {
 
   const method = useCallback(() => {
     sessionData &&
-      sessionData.parameters.map((object, index) => {
-        return console.log(`${object}, ${index}`);
-      });
+      sessionData.parameters.forEach((object) => console.log(object));
   }, [sessionData]);
 
   useEffect(() => {
