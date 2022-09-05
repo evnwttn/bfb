@@ -37,16 +37,18 @@ export const BFB = () => {
         sessionData.parameters.forEach((parameterName, parameterIndex) => {
           if (parameterName !== "title") {
             setValue(
-              `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
+              `tracks[${trackIndex}].parameters[${
+                parameterIndex - 1
+              }].parameter`,
               parameterName
             );
             setValue(
-              `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
-              "default"
+              `tracks[${trackIndex}].parameters[${parameterIndex - 1}].colour`,
+              ``
             );
             setValue(
-              `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
-              "default"
+              `tracks[${trackIndex}].parameters[${parameterIndex - 1}].comment`,
+              ``
             );
           }
         });
