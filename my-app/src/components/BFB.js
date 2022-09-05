@@ -1,4 +1,11 @@
 import "../style.css";
+import { useForm } from "react-hook-form";
+
+const { register, handleSubmit, setValue } = useForm({
+  defaultValues: {
+    parameters: ["title"],
+  },
+});
 
 const session = {
   id: "Butt Sesh",
