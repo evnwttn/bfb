@@ -31,15 +31,22 @@ export const BFB = () => {
     },
   });
 
-  const method = useCallback(() => {
+  const method2 = useCallback(() => {
     sessionData &&
       sessionData.tracks.forEach((track, index) => {
-        setValue(
-          `tracks.${index}.parameters`,
-          `${sessionData.parameters.map((title, index) => {
-            return title;
-          })}`
-        );
+        setValue(`tracks.${index}.parameters.parameter`, `poop`);
+      });
+  }, [sessionData, setValue]);
+
+  const method = useCallback(() => {
+    sessionData &&
+      sessionData.tracks.forEach((track, trackIndex) => {
+        sessionData.parameters.forEach((parameterName, parameterIndex) => {
+          setValue(
+            `tracks[${trackIndex}].parameters.parameter[${parameterIndex}]`,
+            parameterName
+          );
+        });
       });
   }, [sessionData, setValue]);
 
