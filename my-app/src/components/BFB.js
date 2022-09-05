@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export const BFB = () => {
+  const [sessionData, setSessionData] = useState();
+  const onSubmit = (data) => setSessionData(data);
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       id: "Butt Sesh",
@@ -29,19 +31,12 @@ export const BFB = () => {
     },
   });
 
-  const [sessionData, setSessionData] = useState();
-  const onSubmit = (data) => setSessionData(data);
-
   useEffect(() => {
     console.log(sessionData);
   }, [sessionData]);
 
-  function pushDeButton() {
-    handleSubmit(onSubmit);
-  }
-
   return (
-    <button id="bfb" onClick={pushDeButton}>
+    <button id="bfb" onClick={handleSubmit(onSubmit)}>
       BFB
     </button>
   );
